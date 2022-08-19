@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link type="text/css" rel="stylesheet" href="css/utilities.css" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+
+		<title>Main Page</title>
+	</head>
+	<body>
+		<div class="container flex">
+			<nav class="nav flex">
+				<!-- <% if(user) { %>
+					<a href="/feed">Instagram Clone</a>
+					<% } else { %>
+					<a href="/">Instagram Clone</a>
+					<% } %> -->
+				<h1><a href="/">Instagram Clone</a></h1>
+				<ul class="flex">
+					<% if(user) { %>
+					<li><a href="/feed" class="btn">Feed</a></li>
+					<li><a href="/profile" class="btn">My Profile</a></li>
+					<li><a href="/logout" class="btn">Log Out</a></li>
+					<% }else { %>
+					<li><a class="btn login" href="/login">Login</a></li>
+					<li><a class="btn register" href="/signup">Register</a></li>
+					<% } %>
+				</ul>
+			</nav>
+
+			<main>
+				<h2>Welcome to my Instagram clone!</h2>
+				<% if(user) { %>
+				<p>
+					You are currently logged in! Click <a href="/feed">here</a> to go to
+					your feed.
+				</p>
+				<% }else { %>
+				<p>
+					If you'd like to post photos, please <a href="/login">sign in</a> or
+					<a href="/signup">register</a>. Have fun!
+				</p>
+				<% } %>
+			</main>
+
+			<!-- <section class="about">
+				<h2>What is Artsy?</h2>
+				<div class="about-cards flex">
+					<div class="card flex">Upload Your Art! Display it in your own gallery</div>
+					<div class="card flex">Explore art from artists around the world!</div>
+					<div class="card flex">Tip artists or buy art!</div>
+				</div>
+			</section> -->
+			<!-- <section class="more flex"> 
+				<h1>Want to know more? Sign up now!</h1>
+			</section> -->
+		</div>
+	</body>
+</html>

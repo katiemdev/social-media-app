@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
+
+/* Resets */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Pattaya", sans-serif;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+li {
+	list-style: none;
+}
+
+/* Container */
+.container {
+	border: 1px solid black;
+	margin: auto;
+	width: 80%;
+	min-height: 100vh;
+	align-content: flex-start;
+}
+
+/* Nav */
+.container .nav {
+	background: rgb(125, 221, 194);
+	width: 100%;
+	height: 75px;
+	justify-content: space-between;
+	flex-shrink: 1;
+	padding: 0 10px;
+}
+
+.nav h1 {
+	font-size: 36px;
+	margin-left: 20px;
+}
+
+.nav h1 a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.nav ul {
+	justify-content: space-between;
+}
+
+.nav ul li {
+	list-style: none;
+	margin: 10px;
+}
+
+ul li a {
+	text-decoration: none;
+}
+
+/* form */
+.form {
+	border: 1px solid black;
+	width: 500px;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, 1fr);
+	padding: 10px 0;
+	margin: 10px auto;
+}
+
+.form > * {
+	font-size: 30px;
+	text-align: center;
+	margin: 10px;
+}
+
+.form .input label {
+	flex-grow: 1;
+	margin-left: 10px;
+}
+
+.form .input input,
+input[type="text"],
+select,
+textarea {
+	padding-left: 5px;
+	width: 100%;
+	flex-grow: 2;
+	font-family: "Courier New", Courier, monospace;
+}
+
+button,
+input,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+}
+
+.form .btn {
+	margin: auto;
+	font-size: 20px;
+	align-self: center;
+}
+
+.container .form-container {
+	flex-direction: column;
+}
+
+.form-container h1 {
+	text-align: center;
+	margin: 10px 0;
+	font-size: 36px;
+}
+
+.email p {
+	font-size: 20px;
+}
+
+.alert {
+	color: darkred;
+	font-size: 30px;
+	text-align: center;
+	margin: 5px;
+}

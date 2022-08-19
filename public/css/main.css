@@ -1,0 +1,64 @@
+/* ABOUT
+.about {
+	width: 100%;
+	padding-bottom: 20px;
+	border: 1px solid blue;
+}
+
+.about h2 {
+	font-size: 30px;
+	height: 30px;
+	margin: 20px 0 10px 0;
+	text-align: center;
+}
+
+.about-cards {
+	justify-content: space-evenly;
+}
+
+.about-cards > * {
+	flex-grow: 1;
+	position: relative;
+	width: 300px;
+	text-align: center;
+	font-size: 24px;
+	margin: 10px 20px;
+	transition: transform 1s;
+}
+
+.about-cards > *:hover {
+	transform: translateY(-10px);
+}
+
+.about-cards .card {
+	height: 200px;
+	padding: 0 20px;
+}
+
+.more {
+	font-size: 36px;
+	margin: 10px;
+	text-align: center;
+	height: 200px;
+} */
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	height: 80vh;
+}
+
+h2 {
+	font-size: 40px;
+	margin: 15px auto;
+	text-align: center;
+}
+
+p {
+	font-size: 32px;
+	text-align: center;
+}

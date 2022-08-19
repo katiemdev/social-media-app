@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://kit.fontawesome.com/5d5d406cf4.js" crossorigin="anonymous"></script>
+		<link type="text/css" rel="stylesheet" href="css/utilities.css" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		<link type="text/css" rel="stylesheet" href="css/feed.css" />
+		<title>Feed</title>
+	</head>
+	<body>
+		<!--**** navbar ****-->
+		<div class="container flex">
+			<nav class="nav flex">
+				<h1><a href="/">Instagram Clone</a></h1>
+				<ul class="flex">
+					<li><a href="/feed" class="btn">Feed</a></li>
+					<li><a href="/profile" class="btn">My Profile</a></li>
+					<li><a href="/logout" class="btn">Log Out</a></li>
+				</ul>
+			</nav>
+
+			<!-- **** Main page content****-->
+			<div class="main-content flex">
+				<div class="header">
+					<h1 class="feed-h1">Welcome, <%= user.username %></h1>
+					<button type="button" class="btn uploadImageButton" onclick="openPopUp()">
+						Upload an Image
+					</button>
+				</div>
+				<!-- ***** IMAGE ****** -->
+				<ul class="image-ul grid">
+					<% for(let i=0; i<posts.length; i++) {%>
+					  <li class="image-li flex">
+						<p class="title"><%= posts[i].title %></p>
+						<a class="image-container grid" href="/posts/<%= posts[i]._id%>">
+						  <img class="img-fluid" src="<%= posts[i].image%>">
+						</a>
+
+						<% if(posts[i].caption.length){ %>
+						<p class="caption">"<%= posts[i].caption %>"</p>
+						<% } %>
+
+						<!--**** buttons ****-->
+						<p class="likes"><%= posts[i].likes %> likes | <%= posts[i].comments.length %> comments</p>
+						<div class="buttons flex">
+							<form
+								action="/posts/likePost/<%= posts[i]._id %>?_method=PUT"
+								method="POST"
+								>
+								<button class="btn fa fa-heart" type="submit"></button>
+							</form>
+							<a style="padding: 0" href="/posts/<%= posts[i]._id%>"><i class="btn fa fa-comment-dots"></i></a>
+							<%if(posts[i].user == user.id){ %>
+							<form
+								action="/posts/deletePost/<%= posts[i]._id %>?_method=DELETE"
+								method="POST"
+								>
+								<button class="btn fa fa-trash" type="submit"></button>
+							</form>
+							<%}%>
+						</div>
+					  </li>
+					<% } %>
+				</ul>
+			</div>
+
+			<!-- **pop-up for upload image window **-->
+			<div id="light" class="file-upload">
+				<h2>Add a post</h2>
+				<a
+					href="javascript:void(0)"
+					onclick="closePopUp()"
+					class="btn"
+					>Close</a>
+				<form
+						action="/posts/createPost"
+						enctype="multipart/form-data"
+						method="POST"
+						class="form grid">
+					<div class="input">
+						<label for="title" class="form-label">Title</label>
+						<input type="text" class="form-control" id="title" name="title" />
+					</div>
+					<div class="input">
+						<label for="caption" class="form-label">Caption</label>
+						<textarea class="form-control" id="caption" name="caption"></textarea>
+					</div>
+					<div class="input">
+						<label for="imgUpload" class="form-label">Image</label>
+							<input
+								type="file"
+								class="form-control"
+								id="imageUpload"
+								name="file"
+							/>
+					</div>
+						<button type="submit" class="btn" value="Upload">
+							Submit
+						</button>
+				</form>
+			</div>
+			<div id="fade" class="black_overlay"></div>
+		</div>
+
+		<script src="js/index.js"></script>
+	</body>
+</html>

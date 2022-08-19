@@ -1,0 +1,138 @@
+/************** 
+File upload pop-up 
+***************/
+
+.black_overlay {
+	display: none;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 1001;
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+.file-upload {
+	display: none;
+	position: fixed;
+	flex-direction: column;
+	top: 10%;
+	left: 25%;
+	width: 50%;
+	/* height: 50%; */
+	padding: 16px;
+	border: 2px solid rgb(125, 221, 194);
+	background-color: white;
+	z-index: 1002;
+	overflow: auto;
+	text-align: center;
+}
+
+.file-upload a,
+.file-upload a:active {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.file-upload h2 {
+	font-size: 36px;
+}
+
+.form {
+	padding: 20px;
+}
+
+.form .input {
+	text-align: left;
+}
+
+.form .input .form-control {
+	resize: none;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.buttons > * {
+	margin: 0 10px;
+}
+
+/***************
+ Images displayed on feed 
+ *****************/
+
+.main-content {
+	position: relative;
+	width: 100%;
+	flex-direction: column;
+}
+
+.uploadImageButton,
+.uploadImageButton:active {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.feed-h1 {
+	text-align: center;
+	margin: 10px auto;
+	font-size: 50px;
+}
+
+.image-ul {
+	width: 100%;
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	gap: 50px;
+	padding: 20px 50px 50px 50px;
+}
+
+.image-li {
+	width: 100%;
+	height: 100%;
+	place-self: center;
+	flex-direction: column;
+	text-align: center;
+	justify-content: space-around;
+	background-color: rgb(125, 221, 194);
+	flex-grow: 1;
+	border-radius: 10px;
+	padding-bottom: 20px;
+}
+
+.image-container {
+	padding: 0 20px 10px 20px;
+	grid-template-columns: 1fr;
+	align-content: center;
+	object-fit: contain;
+}
+
+.title {
+	width: 480px;
+	background: white;
+	border: 4px solid black;
+	border-radius: 5px;
+	font-size: 36px;
+	margin: 20px auto 5px auto;
+}
+
+.caption {
+	font-size: 25px;
+	text-align: center;
+}
+
+.likes {
+	font-size: 24px;
+}
+
+.image-container img {
+	width: 480px;
+	height: 480px;
+	border: 4px solid black;
+	border-radius: 10px;
+	object-fit: contain;
+	background-color: white;
+}

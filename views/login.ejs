@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link type="text/css" rel="stylesheet" href="css/utilities.css" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		<title>Login</title>
+	</head>
+	<body>
+		<main class="container flex">
+			<nav class="nav flex">
+				<h1><a href="/">Instagram Clone</a></h1>
+				<ul class="flex">
+					<li><a class="btn login" href="/login">Login</a></li>
+					<li><a class="btn register" href="/signup">Register</a></li>
+				</ul>
+			</nav>
+			<div class="form-container flex">
+				<% if (locals.messages.errors) { %> <% messages.errors.forEach( el => {
+				%>
+				<div class="alert alert-danger"><%= el.msg %></div>
+				<% }) %> <% } %> <% if (locals.messages.info) { %> <%
+				messages.info.forEach( el => { %>
+				<div class="alert alert-info"><%= el.msg %></div>
+				<% }) %> <% } %>
+				<h1>Login</h1>
+				<form class="form grid card" action="/login" method="POST">
+					<div class="email input flex">
+						<label for="exampleInputEmail1" class="form-label"
+							>Email address</label
+						>
+						<input
+							type="email"
+							class="form-control"
+							id="exampleInputEmail1"
+							aria-describedby="emailHelp"
+							name="email"
+						/>
+					</div>
+					<div class="password input flex">
+						<label for="exampleInputPassword1" class="form-label"
+							>Password</label
+						>
+						<input
+							type="password"
+							class="form-control"
+							id="exampleInputPassword1"
+							name="password"
+						/>
+					</div>
+					<button type="submit" class="btn">Submit</button>
+				</form>
+				<a href="/" class="btn">Return to Main Page</a>
+			</div>
+		</main>
+	</body>
+</html>
